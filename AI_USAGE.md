@@ -1,0 +1,1 @@
+This project used AI tools for some coding help and documentation drafting, similar to how we use Stack Overflow or docs. All architecture, data decisions, verification, and final code review were done by the team.

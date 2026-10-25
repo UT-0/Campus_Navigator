@@ -1,0 +1,32 @@
+{
+  "name": "inha-campus-navigator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Interactive 2D campus map with shortest walking routes for Inha University students.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "format": "prettier --write .",
+    "data:fetch-osm": "NODE_USE_ENV_PROXY=1 node scripts/fetch-osm.mjs",
+    "data:build": "node scripts/build-campus.mjs",
+    "validate": "node scripts/validate-data.mjs",
+    "reports": "node scripts/make-reports.mjs && node scripts/photos-todo.mjs",
+    "photos:fetch": "NODE_USE_ENV_PROXY=1 node scripts/fetch-photos.mjs",
+    "photos:optimize": "node scripts/optimize-photos.mjs",
+    "photos:todo": "node scripts/photos-todo.mjs",
+    "photos": "npm run photos:fetch && npm run photos:optimize && npm run data:build && npm run photos:todo"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.10",
+    "sharp": "^0.35.5",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  }
+}
